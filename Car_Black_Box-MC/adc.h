@@ -16,7 +16,7 @@
 void init_adc(void);
 unsigned short read_adc(unsigned char channel);
 void display_speed(unsigned short adc_reg_val);
-void save_speed(unsigned short adc_reg_val, int n);
+void save_speed(unsigned short adc_reg_val);
 
 
 #endif

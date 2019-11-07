@@ -1,0 +1,1 @@
+ clear_log.d  clear_log.p1:  clear_log.c clcd.h main.h matrix_keypad.h pic_specific.h

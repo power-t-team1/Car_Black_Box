@@ -65,7 +65,7 @@ void main(void)
 		key1 = read_switches(LEVEL_CHANGE);
 				
 				//Mk_SW3 -->down key
-			if (key1 == MK_SW3)
+			if (key1 == MK_SW10)
 				{
 					if(count++ >= 100)
 					{
@@ -112,8 +112,8 @@ void main(void)
 			if (key == MK_SW1)
 			{
 				ON_OFF = !ON_OFF;
-				save_time();
 
+				save_time();
 
 				if (ON_OFF)
 				{	
@@ -123,9 +123,7 @@ void main(void)
 				//	save_array[9] = 79;
 				//	save_array[10] = 78;
 				//	save_array[11] = 32;
-				save_speed(adc_reg_val, 1);
-
-
+					ON_OFF_up_down_gear(10);
 				}
 				else
 				{
@@ -135,9 +133,10 @@ void main(void)
 				//	save_array[9] = 79;
 				//	save_array[10] = 70;
 				//	save_array[11] = 70;
-				save_speed(adc_reg_val, 0);
-
+					ON_OFF_up_down_gear(11);
 				}
+
+				save_speed(adc_reg_val);
 
 				save_events();
 			}
@@ -160,10 +159,10 @@ void main(void)
 				}
 				save_time();
 
-				up_down_gear(gear);
+				ON_OFF_up_down_gear(gear);
 				count = 0;
 
-				save_speed(adc_reg_val, 2);
+				save_speed(adc_reg_val);
 
 				save_events();
 			}

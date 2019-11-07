@@ -34,22 +34,33 @@ int display_menu(void)
 					break;
 					case 1:
 						password_change();
-						CLEAR_DISP_SCREEN;
-
 					break;
+
+					case 2:
+						set_time();
+						break;
+					case 3:
+						download_log();
+						break;
+					case 4:
+						clear_log();
+						break;
+
 				}
+				CLEAR_DISP_SCREEN;
+
 						return 1;
 
 			}
 		}
 
-		if (key == MK_SW2 || key == MK_SW3)
+		if (key == MK_SW11 || key == MK_SW12)
 			{
 				CLEAR_DISP_SCREEN;
 				temp = 0;
 				
 				//MK_SW2 -->UP , MK_SW3 --> DOWN
-				if (key == MK_SW2)
+				if (key == MK_SW11)
 				{
 					count++;
 					if (count == 5)

@@ -88,11 +88,11 @@ int password_change(void)
 				{
 					CLEAR_DISP_SCREEN;
 					DISP_ON_AND_CURSOR_OFF;
-					clcd_print("Change password not", LINE1(0));
+					clcd_print("Change pass not", LINE1(0));
 					clcd_print("Matched try again later", LINE2(0));
 
-					clcd_print(c_password, LINE1(0));
-					clcd_print(r_password, LINE2(0));
+				//	clcd_print(c_password, LINE1(0));
+				//	clcd_print(r_password, LINE2(0));
 
 					delay_fun();
 					return 1;
@@ -115,9 +115,9 @@ void view_log(void)
 		key = read_switches(STATE_CHANGE);
 		key1 = read_switches(LEVEL_CHANGE);
 
-		if (key1 == MK_SW3)
+		if (key1 == MK_SW7)
 		{
-			if (count++ >= 100)
+			if (count++ >= 1000)
 			{
 				CLEAR_DISP_SCREEN;
 				return;
@@ -125,9 +125,9 @@ void view_log(void)
 
 		}
 
-		if (key == MK_SW10 || key == MK_SW11)
+		if (key == MK_SW11 || key == MK_SW12)
 		{
-			if (key == MK_SW10)
+			if (key == MK_SW11)
 			{
 				if((add + 0x10) != 0xA5)
 				{
@@ -142,6 +142,8 @@ void view_log(void)
 					add = add - 0x10;
 					inc_dec--;
 				}
+				CLEAR_DISP_SCREEN;
+
 			}
 			count = 0;
 	   		 save_array[0] = read_internal_eeprom(add);

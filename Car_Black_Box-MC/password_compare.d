@@ -1,0 +1,1 @@
+ password_compare.d  password_compare.p1:  password_compare.c clcd.h main.h matrix_keypad.h pic_specific.h
